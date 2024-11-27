@@ -23,13 +23,13 @@ public class BaseTest {
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserPosition = "0x0";
 
-        Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
+        Configuration.baseUrl = System.getProperty("baseUrl");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "125");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.remote = "https://" +
-                System.getProperty("selenoidAuth", "user1:1234") + "@"
-                + System.getProperty("selenoidUrl", "selenoid.autotests.cloud") + "/wd/hub";
+                System.getProperty("selenoidAuth") + "@"
+                + System.getProperty("selenoidUrl") + "/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
